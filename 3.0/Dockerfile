@@ -161,6 +161,7 @@ VOLUME /var/lib/cassandra
 
 # Require user & pass for accessing Cassandra instance within container
 RUN echo "authenticator: PasswordAuthenticator" >> /etc/cassandra/cassandra.yaml
+RUN echo "authorizer: org.apache.cassandra.auth.CassandraAuthorizer" >> /etc/cassandra/cassandra.yaml
 
 # 7000: intra-node communication
 # 7001: TLS intra-node communication
